@@ -1,0 +1,24 @@
+# --- core (Phases 1-2) ---
+numpy>=2.0,<3
+pandas>=2.2,<3
+scipy>=1.13
+statsmodels>=0.14
+scikit-learn>=1.5
+pydantic>=2.7,<3
+python-dotenv>=1.0
+
+# --- api, auth, ui (later phases, safe to install now) ---
+fastapi>=0.110
+uvicorn>=0.29
+PyJWT>=2.8
+httpx>=0.27
+streamlit>=1.35
+
+# --- from-scratch NLP helpers ---
+regex>=2024.0
+tqdm>=4.66
+
+# --- quality and security tooling ---
+pytest>=8.0
+ruff>=0.4
+pip-audit>=2.7
