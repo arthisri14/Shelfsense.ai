@@ -12,3 +12,4 @@ models/
 *.gguf
 .ruff_cache/
 .pytest_cache/
+*.egg-info/
