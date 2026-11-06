@@ -13,6 +13,7 @@ from dotenv import load_dotenv
 
 from shelfsense.db.connection import get_connection, init_db
 from shelfsense.simulator.generate import generate
+from shelfsense.search.aliases import seed_aliases
 
 
 def main() -> None:
@@ -35,9 +36,11 @@ def main() -> None:
     conn = get_connection(str(db))
     init_db(conn)
     counts = generate(conn, end_date=args.end_date, days=args.days, seed=args.seed)
+    n_alias = seed_aliases(conn)
     print(f"Database ready: {db}")
     for table, n in counts.items():
         print(f"  {table:24} {n:>8,}")
+    print(f"  {'product_aliases':24} {n_alias:>8,}")
 
 
 if __name__ == "__main__":

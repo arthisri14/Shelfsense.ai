@@ -175,3 +175,10 @@ FROM store_products sp
 JOIN products p ON p.id = sp.product_id
 JOIN v_stock s ON s.store_id = sp.store_id AND s.product_id = sp.product_id
 WHERE sp.active = 1;
+
+-- Alternate names (Tamil/Hindi/transliterated) used by search.
+CREATE TABLE IF NOT EXISTS product_aliases (
+    product_id INTEGER NOT NULL REFERENCES products(id),
+    alias      TEXT NOT NULL,
+    PRIMARY KEY (product_id, alias)
+);
